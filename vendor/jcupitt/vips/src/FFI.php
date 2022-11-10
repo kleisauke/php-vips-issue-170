@@ -433,7 +433,7 @@ typedef void GParamSpec;
 typedef void GValue;
 
 int vips_init (const char *argv0);
-int vips_shutdown (void);
+void vips_shutdown (void);
 void vips_thread_shutdown (void);
 
 const char *vips_error_buffer (void);
