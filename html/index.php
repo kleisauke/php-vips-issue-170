@@ -1,8 +1,10 @@
 <?php
 
+use Jcupitt\Vips\Config;
 use Jcupitt\Vips\FFI;
 use Jcupitt\Vips\Image;
 use Jcupitt\Vips\Interpretation;
+use Psr\Log\AbstractLogger;
 
 try {
     set_error_handler(
@@ -10,6 +12,15 @@ try {
     );
 
     require_once(__DIR__.'/../vendor/autoload.php');
+
+    Config::setLogger(new class extends AbstractLogger {
+        public function log($level, \Stringable|string $message, array $context = []): void
+        {
+            $context = [] === $context ? '' : ' '.json_encode($context);
+            $line = "[vips - $level] $message".$context;
+            printLog(substr($line, 0, 100));
+        }
+    });
 
     $image = Image::thumbnail(
         __DIR__.'/photo.jpg', 600,
@@ -33,7 +44,7 @@ try {
 
 function printLog(string $log)
 {
-    file_put_contents('php://stderr', "\n$log\n");
+    file_put_contents('php://stderr', "$log\n");
 }
 
 function respondError(string $error, int $status_code) {
