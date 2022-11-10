@@ -21,6 +21,8 @@ try {
     $shutdown_behaviour = $_GET['shutdown_behaviour'] ?? 'vips_shutdown';
     if ($shutdown_behaviour === 'vips_shutdown') {
         FFI::shutdown();
+    } elseif ($shutdown_behaviour === 'vips_thread_shutdown') {
+        FFI::vips()->vips_thread_shutdown();
     } elseif ($shutdown_behaviour !== 'no_shutdown') {
         respondError("Bad argument '$shutdown_behaviour' to ?shutdown_behaviour", 422);
     }

@@ -11,6 +11,7 @@ jobs:
         shutdown_behaviour:
           - 'no_shutdown'
           - 'vips_shutdown'
+          - 'vips_thread_shutdown'
 
     steps:
       - name: Checkout
