@@ -13,4 +13,9 @@ $image = Image::thumbnail(
 
 echo '<img width=600 height=452 style="border:1px solid black" alt="Photo" src="data:image/jpg;base64,'.base64_encode($image).'">';
 
-FFI::shutdown();
+$shutdown_behaviour = $_GET['shutdown_behaviour'] ?? 'vips_shutdown';
+if ($shutdown_behaviour === 'vips_shutdown') {
+    FFI::shutdown();
+} elseif ($shutdown_behaviour !== 'no_shutdown') {
+    throw new \InvalidArgumentException('Bad argument to ?shutdown_behaviour');
+}

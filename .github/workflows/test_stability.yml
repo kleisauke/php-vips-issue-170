@@ -1,0 +1,25 @@
+name: Test VIPS shutdown memory / stability
+on:
+  push:
+
+jobs:
+  test-stability:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        shutdown_behaviour:
+          - 'no_shutdown'
+          - 'vips_shutdown'
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Build image
+        run:  docker build . --tag vips-segfault-repro:latest
+
+      - name: Run tests
+        run:  ./run_reproduction_case.sh
+        env:
+          VIPS_SHUTDOWN_BEHAVIOUR: ${{ matrix.shutdown_behaviour }}
