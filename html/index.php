@@ -25,6 +25,12 @@ if ($shutdown_behaviour === 'vips_shutdown') {
     FFI::shutdown();
 
     Utils::debugLog('FFI::shutdown - done', []);
+} elseif ($shutdown_behaviour === 'vips_thread_shutdown') {
+    Utils::debugLog('Begin FFI::thread_shutdown', []);
+
+    FFI::vips()->vips_thread_shutdown();
+
+    Utils::debugLog('FFI::thread_shutdown - done', []);
 } elseif ($shutdown_behaviour !== 'no_shutdown') {
     throw new \InvalidArgumentException('Bad argument to ?shutdown_behaviour');
 }
