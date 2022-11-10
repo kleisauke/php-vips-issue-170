@@ -29,7 +29,7 @@ for (( i=1; $i <= $test_iterations; i++ )) ; do
   container_memory=$(docker stats --no-stream --format '{{.MemUsage}}' 'vips-test')
   result_line="#$(printf '% 2d' "$i") HTTP:$http_status Memory: $container_memory"
 
-  if [ http_status != 200 ] ; then
+  if [ $http_status != 200 ] ; then
     failure_count=$((failure_count + 1))
   fi
 
