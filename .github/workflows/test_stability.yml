@@ -24,3 +24,7 @@ jobs:
         run:  ./run_reproduction_case.sh
         env:
           VIPS_SHUTDOWN_BEHAVIOUR: ${{ matrix.shutdown_behaviour }}
+
+      - name: Check memory usage
+        if:   always()
+        run:  php check-memory-usage.php

@@ -43,9 +43,12 @@ echo ""
 echo ""
 echo "Waiting for final container memory to settle"
 sleep 3
-echo "Final memory usage: $(docker stats --no-stream --format '{{.MemUsage}}' vips-test)"
+final_memory=$(docker stats --no-stream --format '{{.MemUsage}}' vips-test)
+result_summary="$result_summary$NEWLINE  Final Memory: $final_memory"
+echo ""
 echo "Result summary:"
 echo "$result_summary"
+echo "$result_summary" > result-summary.txt
 echo ""
 echo "Total failures: $failure_count"
 
