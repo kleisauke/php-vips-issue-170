@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "937e2df636c4702d3746fe722b23ca46",
+    "content-hash": "244d17cf588b3315a57f2eef56bbbfab",
     "packages": [
         {
             "name": "jcupitt/vips",
-            "version": "v2.1.0",
+            "version": "dev-revise-leaks",
             "source": {
                 "type": "git",
                 "url": "https://github.com/libvips/php-vips.git",
-                "reference": "c46db5539768b132a58f18c88790541b5ebbe440"
+                "reference": "9f97e40c70e7537e1157ecdd26cf11f9caf5bab0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libvips/php-vips/zipball/c46db5539768b132a58f18c88790541b5ebbe440",
-                "reference": "c46db5539768b132a58f18c88790541b5ebbe440",
+                "url": "https://api.github.com/repos/libvips/php-vips/zipball/9f97e40c70e7537e1157ecdd26cf11f9caf5bab0",
+                "reference": "9f97e40c70e7537e1157ecdd26cf11f9caf5bab0",
                 "shasum": ""
             },
             "require": {
@@ -63,9 +63,9 @@
             ],
             "support": {
                 "issues": "https://github.com/libvips/php-vips/issues",
-                "source": "https://github.com/libvips/php-vips/tree/v2.1.0"
+                "source": "https://github.com/libvips/php-vips/tree/revise-leaks"
             },
-            "time": "2022-10-11T08:45:25+00:00"
+            "time": "2022-11-11T16:21:32+00:00"
         },
         {
             "name": "psr/log",
@@ -121,7 +121,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "jcupitt/vips": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

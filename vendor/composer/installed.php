@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'craig410/vips-segfault-repro',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => NULL,
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
+        'reference' => '042219054f69faa5373b297e2304ab8f99b3b1aa',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,18 +11,18 @@
     ),
     'versions' => array(
         'craig410/vips-segfault-repro' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => NULL,
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => '042219054f69faa5373b297e2304ab8f99b3b1aa',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
         'jcupitt/vips' => array(
-            'pretty_version' => 'v2.1.0',
-            'version' => '2.1.0.0',
-            'reference' => 'c46db5539768b132a58f18c88790541b5ebbe440',
+            'pretty_version' => 'dev-revise-leaks',
+            'version' => 'dev-revise-leaks',
+            'reference' => '9f97e40c70e7537e1157ecdd26cf11f9caf5bab0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../jcupitt/vips',
             'aliases' => array(),

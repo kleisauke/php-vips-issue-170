@@ -2,7 +2,7 @@
   "name": "craig410/vips-segfault-repro",
   "type": "project",
   "require": {
-    "jcupitt/vips": "^2.1"
+    "jcupitt/vips": "dev-revise-leaks@dev"
   },
   "minimum-stability": "stable",
   "config": {
