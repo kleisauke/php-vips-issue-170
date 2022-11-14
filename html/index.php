@@ -4,8 +4,11 @@ use Jcupitt\Vips\FFI;
 use Jcupitt\Vips\Image;
 use Jcupitt\Vips\Interpretation;
 use Jcupitt\Vips\Utils;
+use Jcupitt\Vips\Config;
 
 require_once(__DIR__.'/../vendor/autoload.php');
+
+Config::cacheSetMax(0);
 
 $image = Image::thumbnail(
     __DIR__.'/photo.jpg', 600,
