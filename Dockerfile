@@ -1,11 +1,6 @@
-FROM php:8.1-fpm-alpine
+FROM ghcr.io/weserv/images:5.x
 
-RUN apk add --no-cache \
-    libzip-dev \
-    vips-dev \
- && docker-php-ext-configure zip \
- && docker-php-ext-install -j$(nproc) \
-    ffi \
-    opcache \
-    zip \
- && echo 'ffi.enable=1' >> /usr/local/etc/php/conf.d/docker-php-ext-ffi.ini
+RUN cp ngx_conf/imagesweserv-no-cache.conf /etc/nginx/imagesweserv.conf
+
+# Uncomment to to test without jemalloc
+#ENV LD_PRELOAD=""
